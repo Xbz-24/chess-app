@@ -17,6 +17,7 @@
     "@babel/preset-react": "^7.22.5"
   },
   "dependencies": {
+    "chess.js": "^1.0.0-beta.6",
     "chessboardjsx": "^2.4.7",
     "react-scripts": "^5.0.1"
   },
