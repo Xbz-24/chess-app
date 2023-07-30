@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.chess-board .white-1e1d7 .square-55d63 {
+  background-color: #f0d9b5;
+  color: #b58863;
+}
+
+.chess-board .black-3c85d .square-55d63 {
+  background-color: #b58863;
+  color: #f0d9b5;
+}

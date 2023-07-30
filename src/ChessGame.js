@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {Chess} from "chess.js";
+import React, {useState} from "react";
 import Chessboard from "chessboardjsx";
+import Chess  from 'chess.js';
 
 const ChessGame = () => {
 
@@ -8,6 +8,9 @@ const ChessGame = () => {
   const [game, setGame] = useState(new Chess());
 
   const onDrop = ({sourceSquare, targetSquare}) => {
+
+    let tempGame = new Chess(game.fen());
+
     let move = game.move({
       from: sourceSquare,
       to: targetSquare,
@@ -16,13 +19,17 @@ const ChessGame = () => {
 
     // illegal move
     if(move === null) return;
-    setFen(game.fen());
-  };
 
+    setGame(tempGame);
+    setFen(tempGame.fen());
+    if(tempGame.game_over()){
+      alert("Game over");
+    }
+  };
   return (
     <Chessboard
     id = "chessboard"
-    position = "{fen}"
+    position = {fen}
     onDrop = {onDrop}
     width = {400}
     orientation = "white"
